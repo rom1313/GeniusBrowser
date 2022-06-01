@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "@rom13/genius-browser",
+  "version": "1.0.11",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "keywords": [
+    "geniusbowser",
+    "rom13"
+  ],
+  "author": "rom13",
+  "license": "ISC"
+}
