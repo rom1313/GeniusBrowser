@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.11/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.20/index.js"></script>
 
 ```
 
@@ -144,11 +144,12 @@ Log la response de l'url, et lance la fonction après (optionnel)
 function mafonction() {
     // code de votre fonction
 }
-genius.fetchlog('https://API.com') // log response.data
+genius.fetchlog('https://API.com') 
+// log response.data
 
-genius.fetchlog('https://API.com', mafonction) // log response.data puis execute la fonction
+genius.fetchlog('https://API.com', mafonction) 
+// log response.data puis execute la fonction
 
 ```
-
 Enjoy :sunglasses:
 
