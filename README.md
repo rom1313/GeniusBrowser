@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.20/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.21/index.js"></script>
 
 ```
 
@@ -56,6 +56,35 @@ return un nombre aleatoire entre le nombre minimum et le nombre maximum (inclu !
 ```javascript
 let nombre = genius.nbaleatoireminmax(0,24)
 console.log(nombre); // return = 0 ou 1 ou 2........ou 24 !
+```
+## Genius.recupnb(string,transformer)
+Récupère uniquement les nombres d'un string et return le résultat
+Transforme le résultat en type number (optionnel)
+
+```javascript
+let mot = "Le 34 c'est le sud"
+console.log(genius.recupnb(mot)); // log 34
+
+genius.recupnb(mot) // return 34 (type string)
+genius.recupnb(mot,'transformer') // return 34 (type number)
+```
+
+## Genius.moyenne(nb1,nb2,nb3,nb4,nb5,nb6,nb7,nb8,nb9,nb10)
+Return la moyenne arrondi au centième près
+2 nombres minimum, jusqu'à 10 nombres (optionnel)
+
+```javascript
+let moyenne = genius.moyenne(11, 11, 15, 18)
+console.log(moyenne); // log 13.75
+```
+
+## Genius.bigmoyenne(tableau)
+Return la moyenne arrondi au centième près
+nombres illimités (array)
+
+```javascript
+let nb = [12, 12, 12, 45]
+console.log(genius.bigmoyenne(nb)); // return 20.25
 ```
 
 ## Genius.intervallesecondes(secondes, fonction)
