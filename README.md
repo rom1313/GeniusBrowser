@@ -8,16 +8,18 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.21/index.js"></script>
-
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.26/index.js"></script>
 ```
+>Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
-Création d'un Genius :
+## Création d'un Genius :
+
 Dans votre script créez une variable comme ceci :
+
 ```javascript
 const genius = $
 ```
-Il vous suffit désormais d'utiliser les fonction du Genius
+Il vous suffit désormais d'utiliser les fonctions du Genius
 
 ## Genius.date()
 
@@ -180,5 +182,18 @@ genius.fetchlog('https://API.com', mafonction)
 // log response.data puis execute la fonction
 
 ```
+## Genius.salaireSMIC(heures,option,log)
+return ou log (optionnel) le salaire au SMIC arrondi
+
+```javascript
+genius.salaireSMIC(35,'brut') // return 1646
+genius.salaireSMIC(35,'net')  // return 1304
+
+genius.salaireSMIC(35,'brut','log') 
+// log => Pour 35 heures, le salaire sera de 1646 euros (Brut)
+genius.salaireSMIC(35,'net','log') 
+// log => Pour 35 heures, le salaire sera de 1304 euros (Net)
+```
+
 Enjoy :sunglasses:
 
