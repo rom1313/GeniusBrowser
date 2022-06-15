@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.26/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.29/index.js"></script>
 ```
 >Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
@@ -69,6 +69,23 @@ console.log(genius.recupnb(mot)); // log 34
 
 genius.recupnb(mot) // return 34 (type string)
 genius.recupnb(mot,'transformer') // return 34 (type number)
+```
+## Genius.recupsommeObjet(option)
+return la somme des propriétés d'un objet
+```javascript
+const objet = {
+    nom: 'rom',
+    nombre: 13,
+    hobbie: 'art',
+    code: 34
+}
+
+console.log(genius.recupsommeObjet(objet, 'string')); 
+// ici on additionne les propriétés et on renvoi une version string
+// return => rom 13 art 34
+console.log(genius.recupsommeObjet(objet, 'number')); 
+// ici on additionne les nombres entres eux et on renvoi la somme (type number)
+// return 47 (13+34)
 ```
 
 ## Genius.moyenne(nb1,nb2,nb3,nb4,nb5,nb6,nb7,nb8,nb9,nb10)
@@ -193,6 +210,19 @@ genius.salaireSMIC(35,'brut','log')
 // log => Pour 35 heures, le salaire sera de 1646 euros (Brut)
 genius.salaireSMIC(35,'net','log') 
 // log => Pour 35 heures, le salaire sera de 1304 euros (Net)
+```
+## Genius.compareTAB(tab1,tab2,option)
+return ou log (optionnel) si deux tableaux sont identiques
+> Javascript renvoi false si on compare deux tableaux au contenu identique.
+> Gebius.compareTAB renvoi true
+```javascript
+let tab = ['1', { prenom: 'tom', age: 18, tab: ['r', 5, { age: 11 }] }, '5', ['1', 2]]
+let tab2 = ['1', { prenom: 'tom', age: 18, tab: ['r', 5, { age: 11 }] }, '5', ['1', 2]]
+
+genius.compareTAB(tab, tab2) 
+// return true
+genius.compareTAB(tab, tab2,'log') 
+// log => Vrai, les tableaux sont identiques
 ```
 
 Enjoy :sunglasses:
