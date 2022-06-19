@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.29/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.34/index.js"></script>
 ```
 >Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
@@ -224,6 +224,37 @@ genius.compareTAB(tab, tab2)
 genius.compareTAB(tab, tab2,'log') 
 // log => Vrai, les tableaux sont identiques
 ```
+## Genius.textContent(valeur,selector,style)
+Modifie le contenu (textcontent) et le style (optionnel) de votre élément HTML
+
+```javascript
+
+<p id="text"></p> 
+// votre élément HTML (exemple)
+let styledate = "font-size:35px;background-color:black;color:orange;text-align:center"
+// le style voulu (optionnel)
+genius.textContent(genius.date(),'#text',styledate)
+// exemple avec Genius.date()
+genius.textContent(genius.date(),'#text')
+// Le style étant optionnel, vous pouvez juste modifier la valeur
+```
+>Exemple rendu avec le style : <img src="https://zupimages.net/up/22/24/a9c7.png" width="400" />
+
+## ASTUCE : Afficher une heure dynamique
+Utilisation de Genius.textContent() + Genius.heure() + requestAnimationFrame()
+```javascript
+
+//on créer la fonction 
+function heureDynamique() {
+    genius.textContent(genius.heure('complet'), '#text')
+    requestAnimationFrame(heureDynamique)
+}
+//on appel "l'animation"
+requestAnimationFrame(heureDynamique) 
+
+
+```
+Resultat : Votre heure est dynamique, elle se met à jour sans rechargement !
 
 Enjoy :sunglasses:
 
