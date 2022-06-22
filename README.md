@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.34/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.37/index.js"></script>
 ```
 >Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
@@ -229,12 +229,14 @@ Modifie le contenu (textcontent) et le style (optionnel) de votre élément HTML
 
 ```javascript
 
-<p id="text"></p> 
-// votre élément HTML (exemple)
+<p id="text"></p> // votre élément HTML (exemple)
+
 let styledate = "font-size:35px;background-color:black;color:orange;text-align:center"
 // le style voulu (optionnel)
+
 genius.textContent(genius.date(),'#text',styledate)
 // exemple avec Genius.date()
+
 genius.textContent(genius.date(),'#text')
 // Le style étant optionnel, vous pouvez juste modifier la valeur
 ```
@@ -249,12 +251,43 @@ function heureDynamique() {
     genius.textContent(genius.heure('complet'), '#text')
     requestAnimationFrame(heureDynamique)
 }
+
 //on appel "l'animation"
 requestAnimationFrame(heureDynamique) 
 
 
 ```
 Resultat : Votre heure est dynamique, elle se met à jour sans rechargement !
+
+## Genius.event(selector,event,callback)
+Créer un évènement sur l'élément HTML lance la fonction callback
+
+```javascript
+
+<button id="bouttontest">boutton</button>
+// votre élément HTML (exemple)
+
+function callback(e) {
+    console.log(e.target.textContent); // log => 'boutton'
+
+// ATTENTION CETTE FONCTION EST LA CALLBACK
+// Elle ne peut prendre que (e) en paramètre
+// Si vous souhaitez appeler des fonctions avec vos propres paramètres
+// Insèrez les dans cette fonction
+}
+
+genius.event('#bouttontest', 'click', callback)
+// On créer un écouteur au click sur l'element
+
+// OU
+
+genius.event('#bouttontest', 'click', (e)=>{
+    console.log(e.target.textContent); // log => 'boutton'
+    // Inserez vos fonctions...
+})
+```
+
+
 
 Enjoy :sunglasses:
 

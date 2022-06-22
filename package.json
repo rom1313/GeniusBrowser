@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@rom13/genius-browser",
-  "version": "1.0.34",
+  "version": "1.0.37",
   "description": "",
   "main": "index.js",
   "scripts": {
