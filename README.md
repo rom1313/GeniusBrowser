@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.38/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.40/index.js"></script>
 ```
 >Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
@@ -259,6 +259,25 @@ requestAnimationFrame(heureDynamique)
 ```
 Resultat : Votre heure est dynamique, elle se met à jour sans rechargement !
 
+## Genius.element(type,classId,style)
+Créer l'élément HTML, lui ajoute la classe ou l'id (optionnel), et lui applique le style (optionnel)
+
+```javascript
+
+let style = `color:red;`
+
+let element = genius.element('p', '#test', style)
+// ATTENTION le style donné par la fonction est prioritaire
+// si l'ID test possède une color:yellow dans votre css, l'element aura la color:red donné par le style !
+
+let element = genius.element('p', '#test')
+// Le style étant optionnel, vous pouvez faire ceci
+
+let element = genius.element('p', '', style)
+// Si vous souhaitez mettre un style sans mettre la classe ou l'id
+
+```
+
 ## Genius.event(selector,event,callback)
 Créer un évènement sur l'élément HTML lance la fonction callback
 
@@ -286,7 +305,6 @@ genius.event('#bouttontest', 'click', (e)=>{
     // Inserez vos fonctions...
 })
 ```
-
 
 
 Enjoy :sunglasses:
