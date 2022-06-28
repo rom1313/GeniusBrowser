@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@rom13/genius-browser",
-  "version": "1.0.40",
+  "version": "1.0.41",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,5 +12,6 @@
     "rom13"
   ],
   "author": "rom13",
-  "license": "ISC"
+  "license": "ISC",
+  "homepage": "https://github.com/rom1313/GeniusBrowser"
 }
