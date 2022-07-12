@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.41/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.43/index.js"></script>
 ```
 >Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
@@ -177,6 +177,16 @@ if(genius.purifierstring(EXEMPLE)==='erreur'){  // exemple de condition
     // On sait que la valeur donné n'est pas un type string
 }
 ```
+## Genius.fusionObjet(objet1,objet2,objet3,objet4,objet5,objet6,objet7,objet8,objet9,objet10)
+return un objet issu de la fusion de plusieurs objets (2 objets minium), jusqu'à 10 objets (otpionnel)
+
+```javascript
+let fiche = { nom: 'Romain', ville: 'Montpellier' }
+let fiche2 = { nom: "Allane", taille: '1m80' }
+console.log(fusionObjet(fiche, fiche2)) // return => { nom: 'Allane', ville: 'Montpellier', taille:'1m80 }
+```
+> ATTENTION si les objets possèdent une Keyproperty identique (dans l'exemple => 'nom' )
+> la valeur de la propriété sera celle du denier objet passé en paramètre.
 
 ## Genius.csscolor()
 Créer un code css aléatoire de couleur
