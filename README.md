@@ -288,8 +288,9 @@ let element = genius.element('p', '', style)
 
 ```
 
-## Genius.event(selector,event,callback)
+## Genius.event(selector,event,callback,once)
 Créer un évènement sur l'élément HTML lance la fonction callback
+>Possibilité d'activer l'event une seule fois si once est précisé
 
 ```javascript
 
@@ -314,6 +315,14 @@ genius.event('#bouttontest', 'click', (e)=>{
     console.log(e.target.textContent); // log => 'boutton'
     // Inserez vos fonctions...
 })
+// Avec once
+genius.event('#bouttontest', 'click', callback,'once')
+// OU
+genius.event('#bouttontest', 'click', (e)=>{
+    console.log(e.target.textContent); // log => 'boutton'
+    // Inserez vos fonctions...
+},'once')
+
 ```
 
 
