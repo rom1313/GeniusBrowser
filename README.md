@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.43/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.48/index.js"></script>
 ```
 >Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
@@ -104,6 +104,17 @@ nombres illimités (array)
 ```javascript
 let nb = [12, 12, 12, 45]
 console.log(genius.bigmoyenne(nb)); // return 20.25
+```
+## Genius.pourcent(valeurmax,indice,option)
+Return le pourcentage de l'indice par rapport à votre valeur max
+
+```javascript
+genius.pourcent(500,250) 
+// return 50 (type number)
+genius.pourcent(500,250,'string') 
+// return 50% (type string)
+genius.pourcent(500,250,'log') 
+// return 50 (type number) et log => 250 représente 50% de 500(100%)
 ```
 
 ## Genius.intervallesecondes(secondes, fonction)
