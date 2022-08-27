@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.48/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.49/index.js"></script>
 ```
 >Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
