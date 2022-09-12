@@ -8,7 +8,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
- <script src="https://unpkg.com/@rom13/genius-browser@1.0.49/index.js"></script>
+ <script src="https://unpkg.com/@rom13/genius-browser@1.0.50/index.js"></script>
 ```
 >Attention pour éviter tout soucis, ne mettez pas le script en defer..
 
@@ -244,6 +244,32 @@ genius.compareTAB(tab, tab2)
 // return true
 genius.compareTAB(tab, tab2,'log') 
 // log => Vrai, les tableaux sont identiques
+```
+## Genius.trierNum(tab,option,log)
+return ou log (optionnel) les valeurs d'un tableau, trié (nombres uniquement)
+> fonctionne avec le type string et number
+
+```javascript
+let tab = ["6", 2, "3", "1", 4, "5"]
+
+genius.trierNum(tab,'croissant')
+// return [ '1', 2, '3', 4, '5', '6' ]
+genius.trierNum(tab,'décroissant')
+// return [ '6', '5', 4, '3', 2, '1' ]
+genius.trierNum(tab,'croissant','log')
+// return et log => [ '1', 2, '3', 4, '5', '6' ]
+
+```
+## Genius.sansDoublon(tab,log)
+return ou log (optionnel) les valeurs d'un tableau sans doublon
+
+```javascript
+let tab2 = ['rom','sana', 'jean', 'sana', 4, 4, "rom"]
+
+genius.sansDoublon(tab)
+// return [ 'rom', 'sana', 'jean', 4 ]
+genius.sansDoublon(tab,'log')
+// return et log => [ 'rom', 'sana', 'jean', 4 ]
 ```
 ## Genius.textContent(valeur,selector,style)
 Modifie le contenu (textcontent) et le style (optionnel) de votre élément HTML
