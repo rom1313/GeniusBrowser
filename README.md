@@ -9,7 +9,7 @@ Cette version est spécifique pour être utilisé en front-end
 Pour utiliser Genius-browser il suffit d'ajouter le script dans votre html.
 
 ```javascript
-<script src="https://unpkg.com/@rom13/genius-browser@1.0.53/index.js"></script>
+<script src="https://unpkg.com/@rom13/genius-browser@1.0.54/index.js"></script>
 ```
 
 > Attention pour éviter tout soucis, ne mettez pas le script en defer..
@@ -260,6 +260,40 @@ genius.fetchlog("https://API.com");
 
 genius.fetchlog("https://API.com", mafonction);
 // log response.data puis execute la fonction
+```
+## Genius.get(url)
+
+Récupère la réponse d'un requête GET
+
+```javascript
+
+ genius.get("https://MONURL")
+  .then(response => {
+    console.log(response); 
+    // Affiche les données renvoyées par le serveur
+  })
+  .catch(error => {
+    console.error(error); 
+    // Affiche l'erreur s'il y en a une
+  });
+```
+## Genius.post(url,objet)
+
+Post l'objet et récupère la réponse
+
+```javascript
+
+let objet = {pseudo:"Genius",pass:"00000"}
+
+  genius.post('https://MONURL', objet)
+  .then(response => {
+    console.log(response); 
+    // Affiche les données renvoyées par le serveur
+  })
+  .catch(error => {
+    console.error(error); 
+    // Affiche l'erreur s'il y en a une
+  });
 ```
 
 ## Genius.salaireSMIC(heures,option,log)
